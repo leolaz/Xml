@@ -1,0 +1,84 @@
+<medicine>
+    <medication>
+        <name>Name</name>
+        <pharm>TS Pharmatic</pharm>
+        <group>Sedative</group>
+        <analogs>
+            <analog>analog</analog>
+            <analog>analog2</analog>
+            <analog>anal</analog>
+            <analog>fhfdh</analog>
+            <analog>gfw4t</analog>
+        </analogs>
+        <versions>
+            <form name="Таблетки">
+                <version>
+                    <certificate number="UA/0909/09/09">
+                        <dateOfIssue>2001-01-03</dateOfIssue>
+                        <expDate>2021-03-01</expDate>
+                        <organisation>FDrugs</organisation>
+                    </certificate>
+                    <package>
+                        <type>type</type>
+                        <quantity>30</quantity>
+                        <price>12.40</price>
+                    </package>
+                    <dosage>dosage</dosage>
+                </version>
+                <version>
+                    <certificate number="UA/0909/09/09">
+                        <dateOfIssue>2001-01-03</dateOfIssue>
+                        <expDate>2021-03-01</expDate>
+                        <organisation>FDrugs</organisation>
+                    </certificate>
+                    <package>
+                        <type>type</type>
+                        <quantity>30</quantity>
+                        <price>12.40</price>
+                    </package>
+                    <dosage>dosage</dosage>
+                </version>
+            </form>
+            <form name="Капсули">
+                <version>
+                    <certificate number="UA/1234/57/78">
+                        <dateOfIssue>2001-01-03</dateOfIssue>
+                        <expDate>2021-03-01</expDate>
+                        <organisation>FDrugs</organisation>
+                    </certificate>
+                    <package>
+                        <type>type</type>
+                        <quantity>30</quantity>
+                        <price>12.40</price>
+                    </package>
+                    <dosage>dosage</dosage>
+                </version>
+            </form>
+        </versions>
+    </medication>
+    <medication>
+        <name>Name2</name>
+        <pharm>TS Pharmatic2</pharm>
+        <group>ASedative2</group>
+        <analogs>
+            <analog>analog3</analog>
+        </analogs>
+        <versions>
+            <form name="Капсули">
+                <version>
+                    <certificate number="UA/1234/57/78">
+                        <dateOfIssue>2001-01-03</dateOfIssue>
+                        <expDate>2021-03-01</expDate>
+                        <organisation>FDrugs</organisation>
+                    </certificate>
+                    <package>
+                        <type>type</type>
+                        <quantity>30</quantity>
+                        <price>12.40</price>
+                    </package>
+                    <dosage>dosage</dosage>
+                </version>
+            </form>
+        </versions>
+    </medication>
+</medicine>

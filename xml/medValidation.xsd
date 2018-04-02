@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="formEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Таблетки"/>
+            <xs:enumeration value="Капсули"/>
+            <xs:enumeration value="Порошок"/>
+            <xs:enumeration value="Мазь"/>
+            <xs:enumeration value="Паста"/>
+            <xs:enumeration value="Розчин"/>
+            <xs:enumeration value="Екстракт"/>
+            <xs:enumeration value="Настойка"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="medicine" type="medicineType"/>
+    <xs:complexType name="medicineType">
+        <xs:sequence>
+            <xs:element type="medicationType" name="medication" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="medicationType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:string" name="pharm"/>
+            <xs:element type="xs:string" name="group"/>
+            <xs:element type="analogsType" name="analogs"/>
+            <xs:element type="versionsType" name="versions"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="analogsType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="analog" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="versionsType">
+        <xs:sequence>
+            <xs:element type="formType" name="form" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="formType">
+        <xs:sequence>
+            <xs:element type="versionType" name="version" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute type="formEnum" name="name" use="required"/>
+
+    </xs:complexType>
+    <xs:complexType name="versionType">
+        <xs:sequence>
+            <xs:element type="certificateType" name="certificate"/>
+            <xs:element type="packageType" name="package"/>
+            <xs:element type="xs:string" name="dosage"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="certificateType">
+        <xs:sequence>
+            <xs:element type="xs:date" name="dateOfIssue"/>
+            <xs:element type="xs:date" name="expDate"/>
+            <xs:element type="xs:string" name="organisation"/>
+        </xs:sequence>
+        <xs:attribute name="number">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="UA\/[0-9]{4}\/[0-9]{2}\/[0-9]{2}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="packageType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="type"/>
+            <xs:element name="quantity">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="price">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:minInclusive value="0.0"/>
+                        <xs:maxInclusive value="9999999.0"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
